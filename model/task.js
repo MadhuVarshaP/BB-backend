@@ -47,7 +47,7 @@ const taskSchema = new mongoose.Schema(
       default: "Pending",
     },
     proofData: {
-      type: Object,
+      type: String,
       default: null,
     },
   },

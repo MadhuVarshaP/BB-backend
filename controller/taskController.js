@@ -84,7 +84,7 @@ export const submitProof = async (req, res) => {
     // Upload the proof file to IPFS
     // const proofData = await uploadToIPFS(proofFile);
 
-    task.proofData = proofData;
+    task.proofData = proofDescription;
     task.verificationStatus = "Pending";
 
     await task.save();
