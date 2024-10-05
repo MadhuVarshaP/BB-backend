@@ -68,11 +68,11 @@ export const claimTask = async (req, res) => {
 
 export const submitProof = async (req, res) => {
   const { taskID, proofDescription } = req.body;
-  const proofFile = req.file;
+  // const proofFile = req.file;
 
-  if (!proofFile) {
-    return res.status(400).json({ error: "Proof file is required." });
-  }
+  // if (!proofFile) {
+  //   return res.status(400).json({ error: "Proof file is required." });
+  // }
 
   try {
     const task = await Task.findOne({ taskID });
@@ -82,7 +82,7 @@ export const submitProof = async (req, res) => {
     }
 
     // Upload the proof file to IPFS
-    const proofData = await uploadToIPFS(proofFile);
+    // const proofData = await uploadToIPFS(proofFile);
 
     task.proofData = proofData;
     task.verificationStatus = "Pending";
